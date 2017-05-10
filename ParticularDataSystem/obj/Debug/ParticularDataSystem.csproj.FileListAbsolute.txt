@@ -1,0 +1,7 @@
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\ParticularDataSystem\bin\Debug\ParticularDataSystem.dll
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\ParticularDataSystem\bin\Debug\ParticularDataSystem.pdb
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\ParticularDataSystem\bin\Debug\CSML.dll
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\ParticularDataSystem\bin\Debug\CSML.pdb
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\ParticularDataSystem\obj\Debug\ParticularDataSystem.csprojResolveAssemblyReference.cache
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\ParticularDataSystem\obj\Debug\ParticularDataSystem.dll
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\ParticularDataSystem\obj\Debug\ParticularDataSystem.pdb

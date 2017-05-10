@@ -1,0 +1,14 @@
+c:\users\gaiduk\documents\visual studio 2015\Projects\Diploma\Diploma\bin\Debug\Diploma.exe.config
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\Diploma\bin\Debug\Diploma.exe
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\Diploma\bin\Debug\Diploma.pdb
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\Diploma\bin\Debug\InputData_Handling.dll
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\Diploma\bin\Debug\ParticularDataSystem.dll
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\Diploma\bin\Debug\CSML.dll
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\Diploma\bin\Debug\InputData_Handling.pdb
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\Diploma\bin\Debug\ParticularDataSystem.pdb
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\Diploma\bin\Debug\CSML.pdb
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\Diploma\obj\Debug\Diploma.csprojResolveAssemblyReference.cache
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\Diploma\obj\Debug\Diploma.exe
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\Diploma\obj\Debug\Diploma.pdb
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\Diploma\bin\Debug\Generator.dll
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\Diploma\bin\Debug\Generator.pdb

@@ -1,0 +1,9 @@
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\InputData_Handling\bin\Debug\InputData_Handling.dll
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\InputData_Handling\bin\Debug\InputData_Handling.pdb
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\InputData_Handling\bin\Debug\ParticularDataSystem.dll
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\InputData_Handling\bin\Debug\CSML.dll
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\InputData_Handling\bin\Debug\ParticularDataSystem.pdb
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\InputData_Handling\bin\Debug\CSML.pdb
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\InputData_Handling\obj\Debug\InputData_Handling.csprojResolveAssemblyReference.cache
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\InputData_Handling\obj\Debug\InputData_Handling.dll
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\InputData_Handling\obj\Debug\InputData_Handling.pdb

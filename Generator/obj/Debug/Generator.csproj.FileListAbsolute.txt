@@ -1,0 +1,9 @@
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\Generator\bin\Debug\Generator.dll
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\Generator\bin\Debug\Generator.pdb
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\Generator\bin\Debug\CSML.dll
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\Generator\bin\Debug\ParticularDataSystem.dll
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\Generator\bin\Debug\CSML.pdb
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\Generator\bin\Debug\ParticularDataSystem.pdb
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\Generator\obj\Debug\Generator.csprojResolveAssemblyReference.cache
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\Generator\obj\Debug\Generator.dll
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\Generator\obj\Debug\Generator.pdb
