@@ -43,6 +43,7 @@ namespace ParticularDataSystem
         public Complex t2;
         public Complex nu_1;
         public Complex nu_2;
+        public Complex L;
 
 
     }

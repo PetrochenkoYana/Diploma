@@ -50,8 +50,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\..\..\Epam\CSML\CSML.csproj">
-      <Project>{8CD08024-CDBD-4FDB-9B9F-EA35B513BE92}</Project>
+    <ProjectReference Include="..\CSML\CSML.csproj">
+      <Project>{8cd08024-cdbd-4fdb-9b9f-ea35b513be92}</Project>
       <Name>CSML</Name>
     </ProjectReference>
     <ProjectReference Include="..\Generator\Generator.csproj">

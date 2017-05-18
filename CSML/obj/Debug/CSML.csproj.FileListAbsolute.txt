@@ -3,3 +3,7 @@ C:\Epam\CSML\bin\Debug\CSML.pdb
 C:\Epam\CSML\obj\Debug\CSML.csprojResolveAssemblyReference.cache
 C:\Epam\CSML\obj\Debug\CSML.dll
 C:\Epam\CSML\obj\Debug\CSML.pdb
+C:\Users\Gaiduk\Documents\Visual Studio 2015\Projects\Diploma\CSML\bin\Debug\CSML.dll
+C:\Users\Gaiduk\Documents\Visual Studio 2015\Projects\Diploma\CSML\bin\Debug\CSML.pdb
+C:\Users\Gaiduk\Documents\Visual Studio 2015\Projects\Diploma\CSML\obj\Debug\CSML.dll
+C:\Users\Gaiduk\Documents\Visual Studio 2015\Projects\Diploma\CSML\obj\Debug\CSML.pdb

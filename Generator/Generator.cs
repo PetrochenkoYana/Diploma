@@ -250,7 +250,7 @@ namespace Generator
             else
                 return false;
         }
-        public Matrix SearchForStationaryDistribution_Algoritm_2()
+        public Matrix SearchForStationaryDistribution_Algoritm_2(ParticularSystem obj)
         {
 
             var R = new Matrix(this.Q_0.RowCount, this.Q_0.ColumnCount);
@@ -296,15 +296,25 @@ namespace Generator
             }
             var matrixR = R;
             p_i[2] = p_i[1] * R;
-            for (int i = 3; i < p_i.Length - 1; i++)
+            int k = 3;
+            while (p_i[k - 1].MaxNorm() > 0.000001)
             {
+
                 matrixR *= R;
-                p_i[i] = p_i[1] * matrixR;
+                p_i[k] = p_i[1] * matrixR;
+                k++;
             }
+            obj.L = new Complex();
+            for (int i = 0; i<=k; i++)
+            {
+                obj.L = obj.L + ((i * p_i[i]) * Matrix.Ones(p_i[i].ColumnCount, 1))[1,1];
+            }
+            var Lambda = obj.lambda;
             double res = 0.0;
             double sum = res0;
             int t = 1;
-            while (1-sum>0.000006) {
+            while (1 - sum > 0.000006)
+            {
                 res = 0.0;
                 for (int j = 1; j <= p_i[1].ColumnCount; j++)
                 {
@@ -314,7 +324,7 @@ namespace Generator
                 t++;
                 // res0 += p_i[0][1,i].Re;
             }
-        
+
             return system1;
         }
         //public Matrix SearchForStationaryDistribution_Algoritm_1()
