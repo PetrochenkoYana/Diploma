@@ -76,7 +76,24 @@ namespace CSML
                 }
             }
         }
+        public Matrix(Matrix n)
+        {
+            rowCount = n.RowCount;
+            columnCount = n.ColumnCount;
 
+            
+            Values = new ArrayList(n.RowCount);
+
+            for (int i = 1; i <= n.RowCount; i++)
+            {
+                Values.Add(new ArrayList(n.ColumnCount));
+
+                for (int j = 1; j <= n.ColumnCount; j++)
+                {
+                    ((ArrayList)Values[i-1]).Add(n[i,j]);
+                }
+            }
+        }
         /// <summary>
         /// Inits square matrix
         /// </summary>

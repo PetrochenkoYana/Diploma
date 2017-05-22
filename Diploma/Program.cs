@@ -19,7 +19,7 @@ namespace Diploma
             Generator.Generator g = new Generator.Generator(obj);
             Generator.Generator.IsRight(g,obj);
             var ergodicity=g.ErgodicityCondition();
-            g.SearchForStationaryDistribution_Algoritm_2(obj);
+            g.SearchForStationaryDistribution_Algoritm_1(obj);
             Console.ReadKey();
         }
     }

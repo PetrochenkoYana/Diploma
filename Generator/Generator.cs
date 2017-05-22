@@ -16,6 +16,8 @@ namespace Generator
         public Matrix Q_0;
         public Matrix Q_1;
         public Matrix Q_2;
+        public Matrix G_0;
+        public Matrix G;
         public Generator(ParticularSystem obj)
         {
             #region lambda 
@@ -359,10 +361,148 @@ namespace Generator
             var lll = 0;
             return system1;
         }
-        //public Matrix SearchForStationaryDistribution_Algoritm_1()
-        //{
-        //}
+        public Matrix SearchForStationaryDistribution_Algoritm_1(ParticularSystem obj)
+        {
+            var G = Matrix.Identity(this.Q_0.RowCount);
 
+            var reve = Matrix.CastingToMatrix(Matrix.reverse((-this.Q_1).CastingToDouble()));
+            var IterationG = reve*( this.Q_0+this.Q_2*(G * G) ) ;
+            int l = 0;
+
+            while ((IterationG - G).MaxNorm() > 0.000001)
+            {
+                //Console.WriteLine((IterationR - R).MaxNorm());
+                G = IterationG;
+                IterationG = reve * (this.Q_0 + this.Q_2 * (G * G));
+                l++;
+                int tt = 1;
+                double[] ma = new double[48];
+                while (tt != 47)
+                {
+                    double rr = 0.0;
+                    for (int j = 1; j <= IterationG.ColumnCount; j++)
+                    {
+                        rr += G[tt, j].Re;
+                    }
+                    ma[tt] = rr;
+                    tt++;
+                    // res0 += p_i[0][1,i].Re;
+                }
+            }
+            this.G = G;
+            G_0 = -Matrix.CastingToMatrix(Matrix.reverse((Q_1 + Q_2 * G).CastingToDouble())) * Q_10;
+            var FList = new Matrix[1500];
+            
+            var a = GiveMatrixWithLine(0, 1);
+            var F = Matrix.Identity(a.RowCount);
+            var aaaaa= -GiveMatrixWithLine(1, 1);
+            var aa = Matrix.CastingToMatrix(Matrix.reverse(aaaaa.CastingToDouble()));
+            var IterationF = F*a*aa;
+            int ll = 2;
+            FList[0] =new Matrix(F);
+            FList[1] =  new Matrix(IterationF);
+            do
+           {
+                
+
+                    F = IterationF;
+                var aaa = GiveMatrixWithLine(ll - 1, ll);
+                var aaaa = Matrix.CastingToMatrix(Matrix.reverse((-GiveMatrixWithLine(l, l)).CastingToDouble()));
+                    IterationF = FList[ll - 1] * aaa
+                        * aaaa;
+                    FList[ll] = new Matrix(IterationF);
+                    ll++;
+                    int tt = 1;
+                    double[] ma = new double[48];
+                    //while (tt != 47)
+                    //{
+                    //    double rr = 0.0;
+                    //    for (int j = 1; j <= IterationF.ColumnCount; j++)
+                    //    {
+                    //        rr += F[tt, j].Re;
+                    //    }
+                    //    ma[tt] = rr;
+                    //    tt++;
+                    //    // res0 += p_i[0][1,i].Re;
+                    //}
+                
+            }
+            while ((IterationF - F).MaxNorm() > 0.00001);
+
+            var system1 = -GiveMatrixWithLine(0,0);
+            Matrix part2 = new Matrix(FList[1].RowCount,FList[1].ColumnCount);
+            for(int i = 1; i < 4; i++)
+            {
+                part2 += FList[i];
+            }
+            var system2 = part2 * Matrix.Ones(part2.ColumnCount, 1);
+            var system22 = Matrix.Ones(system2.RowCount, 1) + system2;
+
+            for (int i = 1; i <= system1.RowCount; i++)
+            {
+                system1[i, system1.ColumnCount] = system22[i, 1];
+            }
+
+            var x = new Matrix(1, system1.RowCount);
+            x[1, system1.RowCount] = new Complex(1);
+            var p_i = new Matrix[2000];
+            var vector = Matrix.Solve(system1.Transpose(), x.Transpose());
+            vector = vector.Transpose();
+            var r = Matrix.reverse(system1.CastingToDouble());
+            p_i[0] = x * Matrix.CastingToMatrix(r);
+            int k = 1;
+            while (p_i[k - 1].MaxNorm() > 0.000001)
+            {
+                p_i[k] = p_i[0] * FList[k];
+                k++;
+            }
+            double[] mas = new double[25];
+            for (int i = 1; i <= p_i[0].ColumnCount; i++)
+            {
+
+                mas[0] += p_i[0][1, i].Re;
+            }
+            double sum = mas[0];
+            int t = 1;
+            while (t != 15)
+            {
+                var res = 0.0;
+                for (int j = 1; j <= p_i[1].ColumnCount; j++)
+                {
+                    res += p_i[t][1, j].Re;
+                }
+                mas[t] = res;
+                sum += res;
+                t++;
+                // res0 += p_i[0][1,i].Re;
+            }
+            for (int i = 1; i < k; i++)
+            {
+                obj.L = obj.L + ((i * p_i[i]) * Matrix.Ones(p_i[i].ColumnCount, 1))[1, 1];
+            }
+            var Lambda = obj.lambda;
+            return new Matrix();
         }
+        public Matrix GiveMatrixWithLine(int i,int l)
+        {
+            if(i==0 && l == 0)
+            {
+                return Q_00 + Q_01 * G_0;
+            }
+            if (i == 0 && l == 1)
+            {
+                return Q_01;
+            }
+            if (i >=1 && l == i)
+            {
+                return Q_1 + Q_2 * G;
+            }
+            if (i >= 1 && l == i+1)
+            {
+                return Q_2;
+            }
+            return new Matrix();
+        }
+    }
     }
 

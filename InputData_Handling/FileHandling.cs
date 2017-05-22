@@ -42,9 +42,9 @@ namespace InputData_Handling
                 obj.D_1 = new Matrix(str[i]);
                 obj.D_1 = obj.D_1*0.5;
                 i = DoubleIncrement(i);
-                obj.H_0= new Matrix(str[i]);
+                obj.H_0= new Matrix(str[i])*0.25;
                 i = DoubleIncrement(i);
-                obj.H_1 = new Matrix(str[i]);
+                obj.H_1 = new Matrix(str[i])*0.25;
                 i = DoubleIncrement(i);
                 obj.beta_1 = new Matrix(str[i]);
                 i = DoubleIncrement(i);
