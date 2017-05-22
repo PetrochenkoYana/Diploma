@@ -7,3 +7,4 @@ C:\Users\Gaiduk\Documents\Visual Studio 2015\Projects\Diploma\CSML\bin\Debug\CSM
 C:\Users\Gaiduk\Documents\Visual Studio 2015\Projects\Diploma\CSML\bin\Debug\CSML.pdb
 C:\Users\Gaiduk\Documents\Visual Studio 2015\Projects\Diploma\CSML\obj\Debug\CSML.dll
 C:\Users\Gaiduk\Documents\Visual Studio 2015\Projects\Diploma\CSML\obj\Debug\CSML.pdb
+C:\Users\Gaiduk\documents\visual studio 2015\Projects\Diploma\CSML\obj\Debug\CSML.csprojResolveAssemblyReference.cache

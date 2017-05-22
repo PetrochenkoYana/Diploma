@@ -17,7 +17,7 @@ namespace Diploma
             ParticularSystem obj = new ParticularSystem();
             FileHandling fileHandle = new FileHandling(obj);
             Generator.Generator g = new Generator.Generator(obj);
-           // Generator.Generator.IsRight(g,obj);
+            Generator.Generator.IsRight(g,obj);
             var ergodicity=g.ErgodicityCondition();
             g.SearchForStationaryDistribution_Algoritm_2(obj);
             Console.ReadKey();

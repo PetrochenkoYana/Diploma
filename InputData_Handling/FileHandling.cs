@@ -37,10 +37,10 @@ namespace InputData_Handling
                 obj.M_2 = new Complex(Convert.ToDouble(str[i], CultureInfo.InvariantCulture));
                 i = DoubleIncrement(i);
                 obj.D_0 = new Matrix(str[i]);
-                obj.D_0 = obj.D_0 * 0.5;
+                obj.D_0 = obj.D_0*0.5;
                 i = DoubleIncrement(i);
                 obj.D_1 = new Matrix(str[i]);
-                obj.D_1 = obj.D_1 * 0.5;
+                obj.D_1 = obj.D_1*0.5;
                 i = DoubleIncrement(i);
                 obj.H_0= new Matrix(str[i]);
                 i = DoubleIncrement(i);

@@ -3659,57 +3659,108 @@ namespace CSML
         }
         public static double[][] reverse(double[][] A)
         {
-            int i, j, k;
-            int size = A.Length;
-            double[][] E = Matrix.Identity(size).CastingToDouble();
-            for (i = 0; i < size; i++)
+            int n = A.Length;                  // n - размер матрицы
+            double[][] arr = new double[n][];
+            for (int i = 0; i < arr.Length; i++)
+                arr[i] = new double[n * 2];
+            for (int i = 0; i < n; i++)
             {
-                for (j = 0; j < size; j++)
+                for (int j = 0; j < n; j++)
                 {
-                    if (i == j) E[i][j] = 1;
-                    else E[i][j] = 0;
+                    arr[i][j] = A[i][j];
+                }
+            }
+                // запись матрицы, для которой надо найти обратную
+                //            double[][] arr_p = new double[n][n];        // запись матрицы для проверки
+
+                //            for (int i = 0; i<n; i++)
+                //            {
+                //                for (int j = 0; j<n; j++)
+                //                {
+                //                    arr[i][j] = sc.nextDouble();
+                //                    arr_p[i][j] = arr[i][j];
+
+                //                }
+                //}
+
+                for (int i = 0; i < n; i++)          // запись Е матрицы
+            {
+                for (int j = n; j < n * 2; j++)
+                {
+                    if (i + n == j)
+                        arr[i][j] = 1.0;
+                    else arr[i][j] = 0;
                 }
             }
 
-            for (k = 0; k < size; k++)
+
+            for (int g = 0; g < n; g++)  // g - отступ от левой и верхней границы
             {
-                for (j = k + 1; j < size; j++)
-                {
-                    A[k][j] = A[k][j] / A[k][k];
-                }
-                for (j = 0; j < size; j++)
-                {
-                    E[k][j] = E[k][j] / A[k][k];
-                }
-                A[k][k] = A[k][k] / A[k][k];
-                if (k > 0)
-                {
-                    for (i = 0; i < k; i++)
+                int x = g;
+                double max = arr[g][g];
+
+                for (int i = g; i < n; i++)          // поиск ведущего эл-та по столбцу
+                    if (Math.Abs(arr[i][g]) > Math.Abs(max))
                     {
-                        for (j = 0; j < size; j++)
-                        {
-                            E[i][j] = E[i][j] - E[k][j] * A[i][k];
-                        }
-                        for (j = size - 1; j >= k; j--)
-                        {
-                            A[i][j] = A[i][j] - A[k][j] * A[i][k];
-                        }
+                        max = arr[i][g];
+                        x = i;
+                    }
+
+                if (x != g)
+                {                   //поменяли местами строки
+                    for (int j = 0; j < n * 2; j++)
+                    {
+                        double tmp = arr[g][j];
+                        arr[g][j] = arr[x][j];
+                        arr[x][j] = tmp;
                     }
                 }
-                for (i = k + 1; i < size; i++)
+
+                for (int j = g; j < n * 2; j++)
+                    arr[g][j] /= max;
+
+                for (int i = g + 1; i < n; i++)
                 {
-                    for (j = 0; j < size; j++)
+                    double del = arr[i][g];
+                    for (int j = 0; j < 2 * n; j++)
                     {
-                        E[i][j] = E[i][j] - E[k][j] * A[i][k];
+                        arr[i][j] = arr[i][j] - arr[g][j] * del;
                     }
-                    for (j = size - 1; j >= k; j--)
+                }
+
+            }
+
+            for (int g = n - 1; g >= 0; g--)   // обратный проход
+            {
+
+
+                for (int i = 0; i < g; i++)
+                {
+                    double del = arr[i][g];
+                    for (int j = g; j < 2 * n; j++)
                     {
-                        A[i][j] = A[i][j] - A[k][j] * A[i][k];
+                        arr[i][j] = arr[i][j] - arr[g][j] * del;
                     }
+                }
+
+            }
+
+
+            double[][] arr_1 = new double[n][];
+            for (int i = 0; i < arr_1.Length; i++)
+                arr_1[i] = new double[n];// Обратная матрица
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    arr_1[i][j] = arr[i][j + n];
                 }
             }
-            return E;
+            return arr_1;
         }
+        
+
+
 
         #endregion
 
