@@ -3256,6 +3256,7 @@ namespace CSML
         }
 
         public override bool Equals(object obj)
+
         {
             return obj.ToString() == this.ToString();
         }
